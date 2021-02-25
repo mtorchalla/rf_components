@@ -15,6 +15,12 @@ COMPONENT_DOMAIN = 'rf_components'
 COMPONENT_SERVICES = 'rf_components-services'
 
 
+def add_new_switch_to_yaml(call):
+    """Handle the service call."""
+    name = call.data.get("name", "test")
+    _LOGGER.debug("RF_COMPONENTS: Got from service call: {}".format(name))
+
+
 def setup(hass, _config):
     """Set up a rf component."""
 
@@ -23,10 +29,6 @@ def setup(hass, _config):
     hass.services.register(COMPONENT_DOMAIN, "add_new_switch_to_yaml", add_new_switch_to_yaml)
     return True
 
-def add_new_switch_to_yaml(call):
-    """Handle the service call."""
-    name = call.data.get("name", "test")
-    _LOGGER.debug("RF_COMPONENTS: Got from service call: {}".format(name))
 
 def get_entity_from_domain(hass, domain, entity_id):
     component = hass.data.get(domain)
