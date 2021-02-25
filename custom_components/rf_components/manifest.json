@@ -1,0 +1,10 @@
+{
+  "domain": "rf_components",
+  "name": "RF Components",
+  "documentation": "https://github.com/mtorchalla/rf_components",
+  "dependencies": [],
+  "codeowners": [
+    "@mtorchalla"
+  ],
+  "requirements": []
+}
