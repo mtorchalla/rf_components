@@ -1,32 +1,33 @@
-# Describes the format for available virtual services
-
-turn_on:
-  description: Turn on a binary sensor.
+# Service ID
+add_new_switch_to_yaml:
+  # Service name as shown in UI
+  name: Add RF Switch
+  # Description of the service
+  description: Adds a new RF Switch with on and off code as well as the pulse length of the provided protocol to the switch yaml file.
   fields:
-    entity_id:
-      description: Name(s) of entities to turn on
-      example: 'binary_sensor.virtual_motion_1'
-
-turn_off:
-  description: Turn off a binary sensor.
-  fields:
-    entity_id:
-      description: Name(s) of entities to turn off
-      example: 'binary_sensor.virtual_motion_1'
-
-toggle:
-  description: Toggle a binary sensor.
-  fields:
-    entity_id:
-      description: Name(s) of entities to toggle
-      example: 'binary_sensor.virtual_motion_1'
-
-set:
-  description: Set value of a sensor.
-  fields:
-    entity_id:
-      description: Name(s) of entities to toggle
-      example: 'binary_sensor.virtual_motion_1'
-    value:
-      description: Value to set
-      example: 10
+    # Keys of the field
+    on_val:
+      name: On Value
+      description: RF Code for "ON" state
+      required: true
+      example: "48271323"
+    off_val:
+      name: Off Value
+      description: RF Code for "OFF" state
+      required: true
+      example: "48271326"
+    pulse_len:
+      name: Pulse Length
+      description: Pulse Length of RF protocol
+      required: true
+      example: "230"
+    name:
+      name: Name
+      description: Name of the new Switch
+      required: false
+      example: "Switch Living Room Lamps"
+    unique_id:
+      name: Unique ID
+      description: Unique ID of the new Switch
+      required: false
+      example: "switch_living_room_lamps"
